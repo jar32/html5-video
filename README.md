@@ -1,4 +1,4 @@
-![alt text](https://comunicacion.umh.es/files/2017/12/LOGO-ART-PRINCIPAL-IMPRESION-FONDO-BLANCOexportado.jpg)
+![alt text](https://lh3.googleusercontent.com/n9L1BhPkHZeonziccAdupxm9JybHv315sAihoAL1iuHrwU71VLAdh4OmbkM9M8Au-KGBKlE=s170)
 
 # Multimedia Application Design - Bachelor of Computer Science
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
