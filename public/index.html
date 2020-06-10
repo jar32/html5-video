@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--
+  La fuente utilizada para los títulos es RED HAT TEXT y para el resto, OPEN SANS. 
+  La razón es que son dos fuentes que combinan bastante bien y son legibles. Open Sans es una fuente de Google
+  muy utilizada hoy día.
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +16,21 @@
     <!-- HEADER -->
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"><img width="150px" src="./img/umh-dark.svg"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarColor02">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">REPRODUCTOR DE VÍDEO HTML5 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Javascript - Webpack - Bootstrap - Sass<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Javier Almagro Rubiales<span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
@@ -33,58 +41,88 @@
     <!-- SECTION -->
     <section class="container main mt-5">
 
+      <!-- Banner GIMP -->
+      <div class="row">
+        <div class="col-12  mb-4">
+          <img width="100%" src="./img/cabecera-gimp-v2.jpg">
+        </div>
+        
+      </div>
+      
+      <!-- End Banner GIMP -->
+
       <!-- video player -->
       <div class="row">
 
         <div class="col-lg-8 col-sm-12">
-          <video width="100%" controls>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+          <video id="espotifai-player" width="100%">
             Your browser does not support HTML video.
           </video>
-          <p>Título de la pista que se está reproduciendo</p>
+
+          <div class="video-controls">
+            
+              <button type="button" id="play-control" class="play-btn">
+                <span class="material-icons">play_arrow</span>
+              </button>
+            
+            <div class="progress">
+              <div id="track-control" class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <div id="track-control-feedback" class="progress-bar bg-dark" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            
+            
+          </div>
+          <div class="mt-3">
+            <h4 id="trackname">Big Buck Bunny</h4>
+          </div>
         </div>
 
         <div class="col-lg-4 col-sm-12 playlist">
-          <p>Pistas disponibles en el reproductor</p>
 
+          
+          
+          <h4>Pistas disponibles en el reproductor</h4>
+          <div class="separator"></div>
           <div class="row">
 
-            <div class="col-lg-12 col-4">
+            <div class="col-lg-12 col-4 mb-2">
               <div class=" row">
-                <div class="col-lg-6">
-                  <img width="100%" src="https://softart.blog/wp-content/uploads/2019/06/MusicWiz-BigBuckBunny.jpg"/>
+                <div class="col-lg-6 track-container">
+                  <input type="hidden" id="track-1" class="track btn" value=0>
+                  <img width="100%" src="./img/BigBuckBunny.jpg"/>
                 </div>
-                <div class="col-lg-6">
-                  <p>Titulo de pista 1</p>
-                  <p>Autor de la pista</p>
-                  <p>Duración de la pista</p>
+                <div class="col-lg-6 d-flex flex-column justify-content-end">
+                  <h6 class="mt-2">Big Buck Bunny</h6>
+                  <p>Project Peach</p>
+                  <p>1:00</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-12 col-4">
+            <div class="col-lg-12 col-4 mb-2">
               <div class=" row">
-                <div class="col-lg-6">
-                  <img width="100%" src="https://softart.blog/wp-content/uploads/2019/06/MusicWiz-BigBuckBunny.jpg"/>
+                <div class="col-lg-6 track-container">
+                  <input type="hidden" id="track-2" class="track btn" value=1>
+                  <img width="100%" src="./img/sintel.jpg"/>
                 </div>
-                <div class="col-lg-6">
-                  <p>Titulo de pista 1</p>
-                  <p>Autor de la pista</p>
-                  <p>Duración de la pista</p>
+                <div class="col-lg-6 d-flex flex-column justify-content-end">
+                  <h6 class="mt-2">Sintel</h6>
+                  <p>Blender Institute</p>
+                  <p>0:52</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-12 col-4">
+            <div class="col-lg-12 col-4 mb-2">
               <div class=" row">
-                <div class="col-lg-6">
-                  <img width="100%" src="https://softart.blog/wp-content/uploads/2019/06/MusicWiz-BigBuckBunny.jpg"/>
+                <div class="col-lg-6 track-container">
+                  <input type="hidden" id="track-3" class="track btn" value=2>
+                  <img width="100%" src="./img/caminandesLlamigos.jpg"/>
                 </div>
-                <div class="col-lg-6">
-                  <p>Titulo de pista 1</p>
-                  <p>Autor de la pista</p>
-                  <p>Duración de la pista</p>
+                <div class="col-lg-6 d-flex flex-column justify-content-end">
+                  <h6 class="mt-2">Caminandes Llamigos</h6>
+                  <p>Blender Institute</p>
+                  <p>2:30</p>
                 </div>
               </div>
             </div>
@@ -99,45 +137,182 @@
 
       <!-- video player info -->
       <div class="row mt-3">
-
-        <div class="col-md-12 d-flex justify-content-between">
+        <div class="col-md-12 mb-3">
+          <div class="separator"></div>
+        </div>
+        
+        <div class="col-md-6 col-6">
           <div class="row">
 
-            <div class="col-lg-3">
+            <div class="col-lg-2 col-4">
               <img style="height:45px!important;margin-left: 0px;vertical-align:text-bottom;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
             </div>
 
-            <div class="col-lg-9">
-              <p>
-                Autor de la pista
-              </p>
-              <p>
-                Duración de la pista
-              </p>
+            <div class="col-lg-10 col-8 d-flex flex-column justify-content-center">
+              <h5 id="author">
+                Project Peach
+              </h5>
+              <span id="duration" class="text-danger">
+                1:00
+              </span>
             </div>
             
           </div><!-- row -->
-      
-          <div>
-            <button type="button" class="btn btn-danger">REALIZAR CAPTURA DEL VÍDEO</button>
-          </div>
-
         </div>
+
+        <div class="col-md-6 col-6 d-flex flex-row-reverse">
+          
+          <div>
+            <button type="button" id="filter-control" class="btn btn-danger w-100">APLICAR FILTRO SVG</button>
+            <div><span class="badge badge-success">Chrome</span>
+              <span class="badge badge-success">Firefox</span>
+              <span class="badge badge-danger">Edge</span>
+              <span class="badge badge-success">Opera</span> </div>
+          </div>
+  
+        </div>
+
+        <svg id='image' version="1.1" xmlns="http://www.w3.org/2000/svg" width=0 height=0 class="invisible">
+          <defs>
+          <filter id="blurEffect">
+          <feGaussianBlur stdDeviation="5"/>
+          </filter>
+          </defs>
+        </svg>
         
       </div>
       <!-- end video player info -->
 
-      <!-- canvas capture -->
-      <div class="mt-2">
-        En esta parte deberán crearse los elementos necesarios para realizar la captura del vídeo en curso con Canvas.
-      </div>
-      <!-- end canvas capture -->
-
       <!-- browser support -->
-      <div class="mt-2">
-        Información sobre la compatibilidad con navegadores
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="card text-white bg-dark mb-3" style="">
+            <div class="card-header"><h2>Test de compatibilidad entre navegadores</h2></div>
+            <div class="card-body">
+              <h4 class="card-title">Descripción</h4>
+              <p class="card-text">Se ha testeado el reproductor en los navegadores Firefox, Chrome, Edge y Opera. Se ha generado una tabla
+                en la que se resumen los resultados obtenidos para cada funcionalidad. El icono "check" indica que el resultado es satisfactorio,
+                de lo contrario, se indica con una cruz que no ha funcionado correctamente.
+              </p>
+              <h4>Metodología</h4>
+              <p>
+                A continuación, se describen las funcionalidades y cómo se evalúa.
+              </p>
+              <ul>
+                <li>Vídeo: El elemento video es capaz de visualizar el contenido.</li>
+                <li>Play/pause: El botón de play/pause funciona correctamente.</li>
+                <li>Barra de progreso: Al hacer click sobre la barra nos dirige correctamente al instante de reproducción que corresponde.</li>
+                <li>Cambiar pista: Al clicar sobre un vídeo de la lista de reproducción, este carga correctamente.</li>
+                <li>Filtro SVG: El filtro SVG se aplica o desactiva correctamente sobre el vídeo.</li>
+              </ul>
+              <p>
+                Para el resto de parámetros, se ha consultado la web de html5test.com. Incluir una captura del sitio rompe el diseño, así que 
+                se ha includo en la tabla.
+              </p>
+              <h4>Resultados</h4>
+              <div class="table-responsive">
+              <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th style="width: 20%" scope="col">Nombre</th>
+                    <th style="width: 20%" scope="col">Google Chrome</th>
+                    <th style="width: 20%" scope="col">Firefox</th>
+                    <th style="width: 20%" scope="col">Microsoft Edge</th>
+                    <th style="width: 20%" scope="col">Opera Browser</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="">
+                    <th scope="row">Logo</th>
+                    <td><img width="40px" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Chrome_icon_%28September_2014%29.svg"/></td>
+                    <td><img width="40px" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg"/></td>
+                    <td><img width="40px" src="https://upload.wikimedia.org/wikipedia/en/9/98/Microsoft_Edge_logo_%282019%29.svg"/></td>
+                    <td><img width="40px" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg"/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Versión</th>
+                    <td>83.0.4103</td>
+                    <td>77.0.1</td>
+                    <td>44.18362</td>
+                    <td>68.0.3618</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Video</th>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Play/Pause</th>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Barra de progreso</th>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Cambiar pista</th>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Filtro SVG</th>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons text-danger">clear</span></td>
+                    <td><span class="material-icons">done</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Video element (html5test.com)</th>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">H.265 support (html5test.com)</th>
+                    <td><span class="material-icons text-danger">clear</span></td>
+                    <td><span class="material-icons text-danger">clear</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons text-danger">clear</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Parsing inline SVG (html5test.com)</th>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Canvas 2D graphics SVG (html5test.com)</th>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                    <td><span class="material-icons">done</span></td>
+                  </tr>
+
+                  
+                </tbody>
+              </table> 
+            </div>
+
+
+            </div>
+          </div>
+        </div>
+
       </div>
       <!-- end browser support -->
+
     
     </section>
     <!-- END SECTION -->
@@ -145,11 +320,23 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
-        <script src="./assets/app.min.js"></script>
+        <div class="row">
+          <div class="col-12 pt-4 pb-4">
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+            <p>
+              Fuente de iconos: Material Icons by Google. Open source License: <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache license version 2.0.</a>
+            </p>
+            <p>
+              Los iconos SVG de los navegadores se encuentran bajo licencia de dominio público. Fuente: commons.wikimedia.org
+            </p>
+          </div>
+
+        </div>
+        
       </div>
     
     </footer>
     <!-- END FOOTER -->
+    <script src="./assets/app.min.js"></script>
 </body>
 </html>
