@@ -19,7 +19,6 @@ export function tooglePlay(player) {
 export function loadSrc(player, src){
   try {
     player.src=src;
-    //player.src=playlist_ogg[id];
     player.load();
     
   } catch (error) {
