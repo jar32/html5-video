@@ -1,9 +1,15 @@
+// Progress bar
 .progress{
     cursor: pointer;
     height: 0.775rem !important;
     & .progress-bar{
         transition: .3s;
     }
+}
+
+// Track list, Track container...
+.track-container img{
+    border-radius: $border-radius;
 }
 
 .track-container{
@@ -28,12 +34,14 @@
     }
 }
 
+// Separators
 .separator{
     margin: 1em 0px;
     width: 100%;
     border-top: 1px solid $gray-300;
 }
 
+// Video control
 .video-controls{
     position: relative;
     height: 0px;
@@ -60,10 +68,8 @@
     }
 }
 
-.track-container img{
-    border-radius: $border-radius;
-}
 
+// Tables
 .table-dark{ 
     color: $white;
 }
